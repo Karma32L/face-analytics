@@ -1,0 +1,10 @@
+services:
+  face-analytics:
+    build: .
+    container_name: face_analytics
+    privileged: true
+    devices:
+      - /dev/video0:/dev/video0
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
